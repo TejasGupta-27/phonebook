@@ -53,8 +53,7 @@ class PhoneBook:
         for i in range(len(string)):
             tempsum+=ord(string[i])*((263**i)%1000000007)
         return(tempsum%263)
-        # Implement a hash function for strings
-        # You can use Python's built-in hash function or implement a custom one
+
 
         
         
@@ -70,8 +69,8 @@ class PhoneBook:
             
             self.hash_table[key]=HashTableRecord(key,record)     
                
-        # Implement adding a contact to the phone book
-        # You need to compute the hash for the record's name and insert it into the hash table
+       
+
         return
     def delete_contact(self, name):
         result=self.fetch_contacts(name)
@@ -98,8 +97,7 @@ class PhoneBook:
                     current=next
         return False
  
-        # Implement deleting a contact from the phone book
-        # You need to find the record with the given name and remove it from the hash table
+       
     def fetch_contacts(self, query):
         Names=query.split()
         
@@ -118,11 +116,7 @@ class PhoneBook:
                                                              
         result=sorted(result,key=result.count,reverse=True)
 
-        # Implement fetching contacts based on the query
-        # You may need to split the query into words and hash them separately
-        # Then, retrieve and merge the records from the appropriate hash table slots
-        # Sort and return the merged records
-        
+
         return result
     def read_records_from_file(self,file):
         with open(file) as csv_file:
@@ -141,17 +135,10 @@ class PhoneBook:
 
                     
                     Phone_Object = PhoneRecord(Name,x[-1],x[1:-1])
-                    # print(Phone_Object.get_name(),self.compute_hash(Phone_Object.get_name()))
+                   
                     
                         
                     self.add_contact(Phone_Object)
            
                  
-# x=PhoneBook()
-# x.read_records_from_file("Details.txt")
-# y=PhoneRecord('Tejas',"yo",94040)
-# x.add_contact(y)
-# print(x.fetch_contacts("Tejas"))
-# print(x.delete_contact("Tejas"))
-# print(x.fetch_contacts("Tejas"))
 
